@@ -27,6 +27,7 @@
   <a href="#what-it-does">Features</a> ·
   <a href="#installing">Install</a> ·
   <a href="#faq">FAQ</a> ·
+  <a href="#privacy-policy">Privacy</a> ·
   <a href="#support">Support</a>
 </p>
 
@@ -79,13 +80,29 @@ Beyond the core modes:
 
 ## Installing
 
-### Option A: Winget (recommended)
+### Option A: Microsoft Store via winget (recommended)
+
+Installs the Store version silently, accepting the Store agreements so nothing prompts:
 
 ```
-winget install epatels.CKImagePDFReducer
+winget install --id <StoreProductID> --source msstore --silent --accept-package-agreements --accept-source-agreements
 ```
 
-### Option B: curl
+Replace `<StoreProductID>` with the 12-character Product ID from the app's Microsoft Store page URL (the part after `/detail/`). Or install by name:
+
+```
+winget install "CK Image and PDF Size Reducer" --source msstore --silent --accept-package-agreements --accept-source-agreements
+```
+
+The Store version updates automatically through the Store.
+
+### Option B: Winget (GitHub installer)
+
+```
+winget install epatels.CKImagePDFReducer --silent --accept-package-agreements --accept-source-agreements
+```
+
+### Option C: curl
 
 Running the installer with no arguments opens the interactive setup wizard — the terminal isn't stuck, it's just waiting for you to click through that window (Next → Install → Finish). For a real one-command install, unblock the download and pass the silent switches:
 
@@ -108,7 +125,7 @@ curl.exe -L -o CKImagePDFReducerSetup.exe https://github.com/epatels/ck-image-pd
 > - Want to see progress instead of a fully silent install? Drop `/VERYSILENT` down to `/SILENT` — it shows a progress bar but still skips all the click-through prompts.
 > - Omit the switches entirely to get the normal interactive wizard.
 
-### Option C: Manual download
+### Option D: Manual download
 
 1. Download `CKImagePDFReducerSetup.exe` from [Releases](https://github.com/epatels/ck-image-pdf-reducer/releases/latest).
 2. Run it — no admin rights needed, it installs per-user.
@@ -124,13 +141,38 @@ No. Every compression runs locally on your machine. There's no server component 
 Ghostscript handles the actual PDF recompression work. It's a well-established, free, open project — the app just calls it as an external tool, the same way it would call any other program already on your PC, rather than reimplementing that logic itself.
 
 **Does it collect any usage data?**
-No. Versions before 5.0.0 sent anonymous usage statistics; that was removed entirely in 5.0.0. Nothing is collected, and see the [privacy policy](store_listing/PRIVACY_POLICY.md).
+No. Versions before 5.0.0 sent anonymous usage statistics; that was removed entirely in 5.0.0. Nothing is collected. See the [Privacy Policy](#privacy-policy) below.
 
 **Is it really free?**
 Yes — no trial, no paywalled features, no subscription.
 
 **What if I hit a bug or want a feature?**
 Open an issue on this repo, or use **Help → Contact Developer** inside the app — see [Support](#support).
+
+## Privacy Policy
+
+_Effective date: November 5, 2026 · Applies to version 5.0.0 and later_
+
+**Summary: CK Image and PDF Size Reducer does not collect, store, or transmit your personal data or your files.**
+
+**What stays on your device.** Images and PDFs you open are processed locally. They are never uploaded to any server. Output files are written to the folder you choose.
+
+**What we do not collect.** No analytics, telemetry, crash reporting, advertising identifiers, accounts, or usage statistics. Versions before 5.0.0 sent anonymous usage statistics; that feature has been removed entirely.
+
+**Settings stored locally.** The app saves a small settings file on your PC (for example, the path to Ghostscript). It never leaves your device and is removed when you delete the app's data.
+
+**Network use.** The app makes no network requests while compressing files. The only network activity is user-initiated:
+- In the version downloaded from GitHub, the app can check GitHub for a newer release (Help → Check for Updates, and a background check at startup). This request goes to GitHub and carries no information about you or your files beyond what any web request includes, such as your IP address.
+- If you choose to install Ghostscript for PDF compression, the app downloads it from its official source (the Artifex Ghostscript releases on GitHub), with your consent.
+- Links you click (GitHub page, support) open in your web browser.
+
+The Microsoft Store version does not check for updates itself; the Store delivers updates. GitHub, Artifex, and Microsoft have their own privacy policies.
+
+**Children.** The app collects no personal information from anyone, including children.
+
+**Changes.** If this policy changes, the updated version will be posted here with a new effective date.
+
+**Contact.** Open an issue at https://github.com/epatels/ck-image-pdf-reducer/issues.
 
 ## Source code
 

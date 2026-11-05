@@ -1,0 +1,61 @@
+name: Share feedback
+description: Tell us what you think of CK QR Code Generator
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking a minute to share your thoughts.
+        **Please don't paste private details** such as Wi-Fi passwords, UPI IDs, phone numbers or personal links.
+  - type: dropdown
+    id: rating
+    attributes:
+      label: Overall, how is the app working for you?
+      options:
+        - Love it
+        - Good
+        - It's okay
+        - Needs work
+    validations:
+      required: true
+  - type: dropdown
+    id: use
+    attributes:
+      label: What do you mostly use it for?
+      multiple: true
+      options:
+        - Links / websites
+        - Wi-Fi codes
+        - Contact cards
+        - WhatsApp / phone / SMS
+        - Email
+        - Locations
+        - Calendar events
+        - UPI payments
+        - Batch from a spreadsheet
+        - Other
+  - type: textarea
+    id: liked
+    attributes:
+      label: What do you like?
+  - type: textarea
+    id: improve
+    attributes:
+      label: What could be better?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Shown in the window title and the bottom-right of the app, for example 3.1.0.
+      placeholder: "3.1.0"
+  - type: dropdown
+    id: source
+    attributes:
+      label: How did you install it?
+      options:
+        - Microsoft Store
+        - MSIX from GitHub Releases
+        - Run from source

@@ -1,0 +1,27 @@
+name: Suggest a feature
+description: An idea for a new QR type, style or option
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to see?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What problem would it solve?
+      description: How would you use it?
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - New QR code type
+        - Design and styles
+        - Export formats
+        - Batch generation
+        - Interface
+        - Other

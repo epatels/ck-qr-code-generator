@@ -1,0 +1,79 @@
+name: Report a problem
+description: Something isn't working, or a code won't scan
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sorry something went wrong. A few details will help us fix it fast.
+        **Please don't paste private details** such as Wi-Fi passwords, UPI IDs or personal phone numbers. Use made-up sample values.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you see instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Choose the Wi-Fi type
+        2. Turn on a gradient
+        3. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: QR code type
+      options:
+        - URL / Link
+        - Text
+        - Wi-Fi
+        - Contact (vCard)
+        - Email
+        - Phone call
+        - SMS
+        - WhatsApp
+        - Location
+        - Calendar event
+        - UPI payment
+        - Batch generation
+        - Not specific to one type
+  - type: dropdown
+    id: scan
+    attributes:
+      label: If a code won't scan, what did the app's scan test show?
+      options:
+        - Not about scanning
+        - Scan test passed, but my phone can't read it
+        - Scan test failed
+        - Scan test unavailable
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      placeholder: "3.1.0"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: Windows 11 23H2
+  - type: dropdown
+    id: source
+    attributes:
+      label: How did you install it?
+      options:
+        - Microsoft Store
+        - MSIX from GitHub Releases
+        - Run from source
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or anything else
+      description: You can drag images into this box.

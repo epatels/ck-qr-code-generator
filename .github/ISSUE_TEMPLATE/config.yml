@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question or share an idea (Discussions)
+    url: https://github.com/OWNER/REPO/discussions
+    about: Questions, tips and general conversation. Turn on Discussions in the repository settings first.
+  - name: Rate or review on the Microsoft Store
+    url: https://apps.microsoft.com/
+    about: Enjoying the app? A Store rating helps others find it.

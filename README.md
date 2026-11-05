@@ -4,67 +4,35 @@ Branded, print-ready QR codes for links, text, Wi-Fi, contacts, email, phone, SM
 
 ![CK QR Code Generator](docs/screenshot.png)
 
-**Links:** [Feedback page](https://OWNER.github.io/REPO/) · [Report a problem](https://github.com/OWNER/REPO/issues/new?template=bug_report.yml) · [Privacy policy](PRIVACY.md) · [Microsoft Store listing text](STORE_LISTING.md) · [Releases](https://github.com/OWNER/REPO/releases)
+**Links:** [Instructions](INSTRUCTIONS.md) · [Feedback page](https://OWNER.github.io/REPO/) · [Report a problem](https://github.com/OWNER/REPO/issues/new?template=bug_report.yml) · [Privacy policy](PRIVACY.md) · [Releases](https://github.com/OWNER/REPO/releases)
 
-## What's new in 3.1.0
+## Highlights
 
-- **11 QR code types**, not just links (see below)
-- **Batch generation** from an Excel or CSV file
-- **Styles**: rounded or dotted modules, rounded or circular corner eyes, gradient colours and a separate eye colour
-- **"Scan me" frames** with your own label and colour
-- **Scan test**: every code is decoded after it's drawn, so you know it reads back correctly before you print it
+- **11 QR code types:** link, text, Wi-Fi, contact card (vCard), email, phone, SMS, WhatsApp, location, calendar event and UPI payment
+- **Batch generation** from an Excel or CSV file, one file per row
+- **Your brand:** logo in the centre, 12 colour presets or custom colours, gradients, rounded or dotted styles, circular corner eyes, transparent background and "Scan me" frames
+- **Built-in scan test:** every code is decoded after it's drawn, so you know it reads back correctly before you print it
+- **Print-ready:** DPI from 72 to 1200, a size readout in centimetres, contrast and "too small to scan" warnings
+- **Export** to PNG, JPG, SVG (vector) and PDF, or copy the image to the clipboard
+- **Private:** works fully offline, with no accounts, tracking or network connections
+- Dark and light themes, and drag and drop for links, logos and spreadsheets
 
-## Features
+## Install
 
-### QR code types
+**Microsoft Store:** [get CK QR Code Generator from the Microsoft Store](https://apps.microsoft.com/detail/9NPSR6HWP1FF), or search for it by name.
 
-| Type | What scanning it does |
-|---|---|
-| URL / Link | Opens the web address |
-| Text | Shows any text, in any language |
-| Wi-Fi | Joins the network (name, password, security, hidden network) |
-| Contact (vCard) | Adds a contact with name, phones, email, website, address and note |
-| Email | Starts an email with the recipient, subject and message filled in |
-| Phone call | Dials the number |
-| SMS | Starts a text message, optionally pre-filled |
-| WhatsApp | Opens a chat with a pre-filled message |
-| Location | Opens a map at the coordinates |
-| Calendar event | Adds an event, including all-day events |
-| UPI payment | Opens a payment to a UPI ID, with optional amount and note |
+**Run from source:** requires Python 3.9+ (64-bit recommended).
 
-### Design
+```bat
+pip install -r requirements.txt
+python qr_code_generator_qt.pyw
+```
 
-- **Live preview** that updates as you type
-- **Logo in the centre** with an adjustable size (10-30%) and a white shield behind it
-- **Highest error correction (level H)**, so QR codes with a logo still scan reliably
-- **Colours**: 12 presets, custom hex values and a colour picker, a transparent background, and a contrast checker
-- **Styles**: dots (square, rounded, round), corner eyes (square, rounded, circle), gradient with three directions, optional separate eye colour
-- **Frames**: label above or below the code ("SCAN ME" or your own text) in any colour
-- **Caption** below the code, automatic or your own text, with font, size, colour and word wrap
+On Windows you can also double-click `qr_code_generator_qt.bat`. `openpyxl` (Excel batch files) and `zxing-cpp` (scan test) are optional: if they are missing, the app still runs and switches those two features off.
 
-### Output
+## Using the app
 
-- **Print controls**: quiet-zone border (1-10 modules) and DPI (72-1200), with a physical size readout in cm and a warning when the code is too small to scan
-- **Export** to PNG, JPG, SVG (vector, with all styles) and PDF (sized to the chosen DPI)
-- **Copy image** straight to the clipboard
-- **Scan test** after every change: a green tick means the finished image decodes back to exactly what you entered
-
-### Batch generation
-
-Click **Batch...** (Ctrl+B), or drop an .xlsx or .csv file onto the window.
-
-1. Choose the type in the main window and set the colours, style, frame and logo you want.
-2. Pick your spreadsheet. The first row must hold column names.
-3. Match each field to a column. Fields you leave unmatched use the value in the main window. Columns with names like the field names (for example `ssid`, `Mobile`, `Email`) are matched for you.
-4. Optionally choose a caption column and a file-name column, pick a format and an output folder, and click **Generate**.
-
-Rows with problems (for example a missing Wi-Fi name) are skipped and listed so you can fix them. Duplicate file names get a number added. For calendar events use dates like `2026-12-25 18:30`.
-
-### Other
-
-- **Drag and drop** a link or text onto the window, or an image to use as the logo
-- **Default logo**: save one logo and load it in a click
-- **Dark and light themes**, remembered between sessions
+See **[INSTRUCTIONS.md](INSTRUCTIONS.md)** for a step-by-step guide to every QR code type, styles, frames, batch generation, keyboard shortcuts, scanning tips and troubleshooting.
 
 ## Feedback and support
 
@@ -72,59 +40,12 @@ Rows with problems (for example a missing Wi-Fi name) are skipped and listed so 
 - **Questions and ideas:** [Discussions](https://github.com/OWNER/REPO/discussions).
 - Please don't post Wi-Fi passwords, UPI IDs or personal phone numbers. Made-up sample values are fine.
 
-## Keyboard shortcuts
-
-| Shortcut | Action |
-|---|---|
-| Ctrl+L | Focus the first input box |
-| Ctrl+S | Export as PNG |
-| Ctrl+Shift+C | Copy image to clipboard |
-| Ctrl+B | Open batch generation |
-
-## Install
-
-### Microsoft Store
-Search for **CK QR Code Generator** in the Microsoft Store.
-
-### Run from source
-Requires Python 3.9+ (64-bit recommended). `openpyxl` (Excel batch files) and `zxing-cpp` (scan test) are optional: if they are missing, the app still runs and switches those two features off.
-
-```bat
-pip install -r requirements.txt
-python qr_code_generator_qt.pyw
-```
-
-On Windows you can also double-click `qr_code_generator_qt.bat`.
-
-## Build the Store package yourself
-
-Needs 64-bit Python 3 and the Windows 10/11 SDK (`makeappx`). Keep `build.bat`, `qr_code_generator_qt.pyw` and `requirements.txt` together.
-
-```bat
-build.bat          :: builds the unsigned MSIX for Microsoft Store upload
-build.bat clean    :: delete the build and dist folders
-```
-
-Before the first build, fill in `STORE_IDENTITY`, `STORE_PUBLISHER` and `STORE_PUBLISHER_DISPLAY` at the top of `build.bat` (from Partner Center, Product identity). The package is not signed because the Microsoft Store signs it for you, so it can only be installed through the Store. To use your own app icon, put a PNG at `packaging\logo.png`.
-
-## Settings
-
-Your theme and default logo are saved in `qr_generator_config.json`. When run from source it sits next to the script. In the installed (packaged) app it is stored in `%APPDATA%\CK QR Code Generator`.
-
 ## Privacy
 
 Read the full [privacy policy](PRIVACY.md). In short: the app works entirely on your computer. It makes no network connections and collects, stores or sends no personal data. Wi-Fi passwords, contact details and payment details you type in are never saved to disk; only your theme and default logo path are.
 
-## Tips for scanning
+## Built with
 
-- Keep strong contrast between the QR colour and the background, dark on light works best.
-- Keep the logo at 20% or smaller for small prints.
-- For print, use 300 DPI or higher and keep the code at least 2 cm wide.
-- Styled codes (dots, gradients, frames) look great but read less easily. Check for the green scan test tick, and test with a real phone before printing many.
-- Contact cards and calendar events hold a lot of data and make dense codes. Print them larger and leave out fields you don't need.
-- Check UPI IDs carefully: a payment goes to whoever owns the ID. The app asks you to confirm the payee before you export.
-- The spec recommends a 4-module quiet zone. Raise the border setting if the code will sit against a busy background.
+[PySide6](https://pypi.org/project/PySide6/), [qrcode](https://pypi.org/project/qrcode/), [Pillow](https://pypi.org/project/Pillow/), [ReportLab](https://pypi.org/project/reportlab/), and optionally [openpyxl](https://pypi.org/project/openpyxl/) and [zxing-cpp](https://pypi.org/project/zxing-cpp/).
 
-## Dependencies
-
-PySide6, qrcode[pil], Pillow, reportlab, openpyxl (optional), zxing-cpp (optional).
+Maintainers: how to build the Microsoft Store package is in [INSTRUCTIONS.md](INSTRUCTIONS.md#building-the-microsoft-store-package).

@@ -1,187 +1,134 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="logo/logo_horizontal_dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="logo/logo_horizontal_transparent.png">
-    <img alt="CK Image and PDF Size Reducer" src="logo/logo_horizontal_transparent.png" width="480">
-  </picture>
-</p>
+# CK QR Code Generator
 
-<p align="center">
-  <b>Shrink images and PDFs on your own PC — no uploads, no cloud, no subscriptions.</b>
-  <br>
-  Drag a file in, pick a target, export. That's the whole workflow.
-</p>
+Branded, print-ready QR codes for links, text, Wi-Fi, contacts, email, phone, SMS, WhatsApp, locations, calendar events and UPI payments. Add your logo, pick your colours and styles, add a "Scan me" frame, and export to PNG, JPG, SVG or PDF. Make hundreds at once from a spreadsheet. Everything runs offline on your PC.
 
-<p align="center">
-  <a href="https://github.com/epatels/ck-image-pdf-reducer/releases/latest"><b>⬇ Latest release (v5.0.0)</b></a> &nbsp;·&nbsp;
-  <b>Windows 10/11</b> &nbsp;·&nbsp;
-  <b>Free</b> &nbsp;·&nbsp;
-  <b>100% Offline</b> &nbsp;·&nbsp;
-  <b>No tracking</b>
-</p>
+![CK QR Code Generator](docs/screenshot.png)
 
-<p align="center">
-  <a href="#download">Download</a> ·
-  <a href="#whats-new-in-500">What's new</a> ·
-  <a href="#why-people-trust-it">Why trust it</a> ·
-  <a href="#what-it-does">Features</a> ·
-  <a href="#installing">Install</a> ·
-  <a href="#faq">FAQ</a> ·
-  <a href="#privacy-policy">Privacy</a> ·
-  <a href="#support">Support</a>
-</p>
+## What's new in 3.1.0
 
----
+- **11 QR code types**, not just links (see below)
+- **Batch generation** from an Excel or CSV file
+- **Styles**: rounded or dotted modules, rounded or circular corner eyes, gradient colours and a separate eye colour
+- **"Scan me" frames** with your own label and colour
+- **Scan test**: every code is decoded after it's drawn, so you know it reads back correctly before you print it
 
-## Download
+## Features
 
-**[⬇ Download the latest Windows installer](https://github.com/epatels/ck-image-pdf-reducer/releases/latest)**
+### QR code types
 
-No installer for your platform yet — the app currently ships for Windows only (Windows 10 version 1809 or later, 64-bit).
-
-<!-- When the Store listing is live, add: **[Get it from the Microsoft Store](YOUR_STORE_URL)** — updates are delivered automatically by the Store. -->
-
-## What's new in 5.0.0
-
-- **New name:** the app is now **CK Image and PDF Size Reducer**.
-- **No tracking:** all anonymous usage analytics have been removed. The app no longer sends any data anywhere, and the old "Share anonymous usage statistics" setting is gone.
-- **Microsoft Store ready:** the same app is now also packaged as an MSIX for the Microsoft Store. In that version the Store handles updates, so the in-app updater and the right-click-menu installer are turned off.
-- Installer, winget ID (`epatels.CKImagePDFReducer`) and download file name are unchanged, so existing installs update normally.
-
-## Why people trust it
-
-- **Your files never leave your machine.** Compression happens locally — there's no upload step to skip, because there's no server to upload to.
-- **No account, no email, no subscription.** Download it, run it, use it.
-- **No tracking.** No analytics, telemetry, or usage statistics are collected — verifiably: the app's only network calls are the optional update check and the optional Ghostscript download, both user-visible. No ads, no banners, no sponsored placements.
-- **Nothing hidden in the install.** Ghostscript, the only external program the app relies on for PDF compression, is installed separately, with your consent, directly from its official source — never bundled or silently dropped in.
-- **Source available on request.** The compiled installer is what ships in Releases, but the full source is yours for the asking — see [Source code](#source-code) below.
-- **Actively maintained.** Versioned releases, a public issue tracker, and a direct line to the developer through the app itself.
-
-## What it does
-
-CK Image and PDF Size Reducer compresses images and PDFs right on your PC. Drag a file in, pick how you want it shrunk, and export — nothing is sent anywhere.
-
-| Mode | What it's for |
+| Type | What scanning it does |
 |---|---|
-| **Resize by percentage** | Scale both dimensions down together |
-| **Fix Width / Fix Height** | Set one dimension, the other auto-scales to preserve aspect ratio |
-| **Compress by Quality** | Reduce JPEG quality to hit a smaller file size |
-| **Target File Size** | Tell it a size limit (e.g. "under 200 KB") and it searches for the best quality/resolution that fits |
-| **PDF Compression** | Shrinks PDFs by recompressing embedded images, text stays vector (via Ghostscript, installed separately on first use) |
-| **PDF Target File Size** | Same idea as image target-size mode, capped by a visual-quality safety floor |
+| URL / Link | Opens the web address |
+| Text | Shows any text, in any language |
+| Wi-Fi | Joins the network (name, password, security, hidden network) |
+| Contact (vCard) | Adds a contact with name, phones, email, website, address and note |
+| Email | Starts an email with the recipient, subject and message filled in |
+| Phone call | Dials the number |
+| SMS | Starts a text message, optionally pre-filled |
+| WhatsApp | Opens a chat with a pre-filled message |
+| Location | Opens a map at the coordinates |
+| Calendar event | Adds an event, including all-day events |
+| UPI payment | Opens a payment to a UPI ID, with optional amount and note |
 
-Beyond the core modes:
+### Design
 
-- **Convert formats** — output as JPEG, PNG, WebP, BMP, or TIFF regardless of the source format (or just keep it the same)
-- **Batch queue** — load and process multiple files in one pass
-- **Drag & drop** — drop files straight onto the window
-- **Windows right-click menu** — optional "Reduce with CK Image and PDF Size Reducer" entry in Explorer's context menu
-- **HEIC support** — reads iPhone-style HEIC images
+- **Live preview** that updates as you type
+- **Logo in the centre** with an adjustable size (10-30%) and a white shield behind it
+- **Highest error correction (level H)**, so QR codes with a logo still scan reliably
+- **Colours**: 12 presets, custom hex values and a colour picker, a transparent background, and a contrast checker
+- **Styles**: dots (square, rounded, round), corner eyes (square, rounded, circle), gradient with three directions, optional separate eye colour
+- **Frames**: label above or below the code ("SCAN ME" or your own text) in any colour
+- **Caption** below the code, automatic or your own text, with font, size, colour and word wrap
 
-## Installing
+### Output
 
-### Option A: Microsoft Store via winget (recommended)
+- **Print controls**: quiet-zone border (1-10 modules) and DPI (72-1200), with a physical size readout in cm and a warning when the code is too small to scan
+- **Export** to PNG, JPG, SVG (vector, with all styles) and PDF (sized to the chosen DPI)
+- **Copy image** straight to the clipboard
+- **Scan test** after every change: a green tick means the finished image decodes back to exactly what you entered
 
-Installs the Store version silently, accepting the Store agreements so nothing prompts:
+### Batch generation
 
-```
-winget install --id <StoreProductID> --source msstore --silent --accept-package-agreements --accept-source-agreements
-```
+Click **Batch...** (Ctrl+B), or drop an .xlsx or .csv file onto the window.
 
-Replace `<StoreProductID>` with the 12-character Product ID from the app's Microsoft Store page URL (the part after `/detail/`). Or install by name:
+1. Choose the type in the main window and set the colours, style, frame and logo you want.
+2. Pick your spreadsheet. The first row must hold column names.
+3. Match each field to a column. Fields you leave unmatched use the value in the main window. Columns with names like the field names (for example `ssid`, `Mobile`, `Email`) are matched for you.
+4. Optionally choose a caption column and a file-name column, pick a format and an output folder, and click **Generate**.
 
-```
-winget install "CK Image and PDF Size Reducer" --source msstore --silent --accept-package-agreements --accept-source-agreements
-```
+Rows with problems (for example a missing Wi-Fi name) are skipped and listed so you can fix them. Duplicate file names get a number added. For calendar events use dates like `2026-12-25 18:30`.
 
-The Store version updates automatically through the Store.
+### Other
 
-### Option B: Winget (GitHub installer)
+- **Drag and drop** a link or text onto the window, or an image to use as the logo
+- **Default logo**: save one logo and load it in a click
+- **Dark and light themes**, remembered between sessions
 
-```
-winget install epatels.CKImagePDFReducer --silent --accept-package-agreements --accept-source-agreements
-```
+## Keyboard shortcuts
 
-### Option C: curl
+| Shortcut | Action |
+|---|---|
+| Ctrl+L | Focus the first input box |
+| Ctrl+S | Export as PNG |
+| Ctrl+Shift+C | Copy image to clipboard |
+| Ctrl+B | Open batch generation |
 
-Running the installer with no arguments opens the interactive setup wizard — the terminal isn't stuck, it's just waiting for you to click through that window (Next → Install → Finish). For a real one-command install, unblock the download and pass the silent switches:
+## Install
 
-**Command Prompt (cmd.exe):**
+### Microsoft Store
+Search for **CK QR Code Generator** in the Microsoft Store.
 
-```
-curl -L -o CKImagePDFReducerSetup.exe https://github.com/epatels/ck-image-pdf-reducer/releases/latest/download/CKImagePDFReducerSetup.exe && powershell -Command "Unblock-File CKImagePDFReducerSetup.exe" && CKImagePDFReducerSetup.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
-```
+### MSIX from Releases
+1. Download `CKQRCodeGenerator_<version>_x64.msix` from the Releases page.
+2. Double-click it and choose **Install**.
 
-**PowerShell:**
+Test builds signed with a self-signed certificate need the certificate trusted first. Open PowerShell as Administrator and run:
 
 ```powershell
-curl.exe -L -o CKImagePDFReducerSetup.exe https://github.com/epatels/ck-image-pdf-reducer/releases/latest/download/CKImagePDFReducerSetup.exe; Unblock-File CKImagePDFReducerSetup.exe; .\CKImagePDFReducerSetup.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+Import-Certificate -FilePath .\test_signing.cer -CertStoreLocation Cert:\LocalMachine\TrustedPeople
+Add-AppxPackage .\CKQRCodeGenerator_<version>_x64.msix
 ```
 
-> **Notes**
-> - Each block above is a single line — paste it as one and press Enter once. If you paste a multi-line version instead, most terminals won't auto-run the last line; press Enter yourself to execute it. That's normal terminal behavior, not a stuck install.
-> - In PowerShell, `curl` is an alias for `Invoke-WebRequest` and doesn't accept `-L`/`-o` the same way, so use `curl.exe` explicitly to run the real curl that ships with Windows 10/11. PowerShell also requires the `.\` prefix to run an exe from the current directory.
-> - `Unblock-File` clears the "downloaded from the internet" flag Windows attaches to curl'd files, which can otherwise trigger a SmartScreen prompt that silently blocks the install if its window doesn't have focus.
-> - Want to see progress instead of a fully silent install? Drop `/VERYSILENT` down to `/SILENT` — it shows a progress bar but still skips all the click-through prompts.
-> - Omit the switches entirely to get the normal interactive wizard.
+### Run from source
+Requires Python 3.9+ (64-bit recommended). `openpyxl` (Excel batch files) and `zxing-cpp` (scan test) are optional: if they are missing, the app still runs and switches those two features off.
 
-### Option D: Manual download
+```bat
+pip install -r requirements.txt
+python qr_code_generator_qt.pyw
+```
 
-1. Download `CKImagePDFReducerSetup.exe` from [Releases](https://github.com/epatels/ck-image-pdf-reducer/releases/latest).
-2. Run it — no admin rights needed, it installs per-user.
+On Windows you can also double-click `qr_code_generator_qt.bat`.
 
-On first PDF compression, it'll walk you through installing [Ghostscript](https://www.ghostscript.com), a free, separate program the app calls out to. Ghostscript itself is never bundled or copied into this app.
+## Build the MSIX yourself
 
-## FAQ
+Needs 64-bit Python 3 and the Windows 10/11 SDK (`makeappx`, `signtool`). Keep `build.bat`, `qr_code_generator_qt.pyw` and `requirements.txt` together.
 
-**Does this upload my files anywhere?**
-No. Every compression runs locally on your machine. There's no server component and no network step in the compression path itself.
+```bat
+build.bat          :: test package, self-signed, installable on this PC
+build.bat store    :: unsigned package for Microsoft Store upload
+build.bat clean    :: delete the build and dist folders
+```
 
-**Why does it need Ghostscript for PDFs?**
-Ghostscript handles the actual PDF recompression work. It's a well-established, free, open project — the app just calls it as an external tool, the same way it would call any other program already on your PC, rather than reimplementing that logic itself.
+For the Store build, fill in `STORE_IDENTITY`, `STORE_PUBLISHER` and `STORE_PUBLISHER_DISPLAY` at the top of `build.bat` (from Partner Center, Product identity). To use your own app icon, put a PNG at `packaging\logo.png`.
 
-**Does it collect any usage data?**
-No. Versions before 5.0.0 sent anonymous usage statistics; that was removed entirely in 5.0.0. Nothing is collected. See the [Privacy Policy](#privacy-policy) below.
+## Settings
 
-**Is it really free?**
-Yes — no trial, no paywalled features, no subscription.
+Your theme and default logo are saved in `qr_generator_config.json`. When run from source it sits next to the script. In the installed (packaged) app it is stored in `%APPDATA%\CK QR Code Generator`.
 
-**What if I hit a bug or want a feature?**
-Open an issue on this repo, or use **Help → Contact Developer** inside the app — see [Support](#support).
+## Privacy
 
-## Privacy Policy
+The app works entirely on your computer. It makes no network connections and collects, stores or sends no personal data. Wi-Fi passwords, contact details and payment details you type in are never saved to disk; only your theme and default logo path are.
 
-_Effective date: November 5, 2026 · Applies to version 5.0.0 and later_
+## Tips for scanning
 
-**Summary: CK Image and PDF Size Reducer does not collect, store, or transmit your personal data or your files.**
+- Keep strong contrast between the QR colour and the background, dark on light works best.
+- Keep the logo at 20% or smaller for small prints.
+- For print, use 300 DPI or higher and keep the code at least 2 cm wide.
+- Styled codes (dots, gradients, frames) look great but read less easily. Check for the green scan test tick, and test with a real phone before printing many.
+- Contact cards and calendar events hold a lot of data and make dense codes. Print them larger and leave out fields you don't need.
+- Check UPI IDs carefully: a payment goes to whoever owns the ID. The app asks you to confirm the payee before you export.
+- The spec recommends a 4-module quiet zone. Raise the border setting if the code will sit against a busy background.
 
-**What stays on your device.** Images and PDFs you open are processed locally. They are never uploaded to any server. Output files are written to the folder you choose.
+## Dependencies
 
-**What we do not collect.** No analytics, telemetry, crash reporting, advertising identifiers, accounts, or usage statistics. Versions before 5.0.0 sent anonymous usage statistics; that feature has been removed entirely.
-
-**Settings stored locally.** The app saves a small settings file on your PC (for example, the path to Ghostscript). It never leaves your device and is removed when you delete the app's data.
-
-**Network use.** The app makes no network requests while compressing files. The only network activity is user-initiated:
-- In the version downloaded from GitHub, the app can check GitHub for a newer release (Help → Check for Updates, and a background check at startup). This request goes to GitHub and carries no information about you or your files beyond what any web request includes, such as your IP address.
-- If you choose to install Ghostscript for PDF compression, the app downloads it from its official source (the Artifex Ghostscript releases on GitHub), with your consent.
-- Links you click (GitHub page, support) open in your web browser.
-
-The Microsoft Store version does not check for updates itself; the Store delivers updates. GitHub, Artifex, and Microsoft have their own privacy policies.
-
-**Children.** The app collects no personal information from anyone, including children.
-
-**Changes.** If this policy changes, the updated version will be posted here with a new effective date.
-
-**Contact.** Open an issue at https://github.com/epatels/ck-image-pdf-reducer/issues.
-
-## Source code
-
-This repo ships the compiled installer only — source isn't published here. If you'd like a copy, open a [source request](https://github.com/epatels/ck-image-pdf-reducer/issues/new?labels=source-request&template=source_request.md) issue, or use **Help → Request Source Code** inside the app, and it'll be sent over at no charge.
-
-## Support
-
-Questions, bugs, or feature requests — open an issue on this repo, or use **Help → Contact Developer** inside the app.
-
----
-
-<p align="center"><sub>Built for people who just want a smaller file, not another account to manage.</sub></p>
+PySide6, qrcode[pil], Pillow, reportlab, openpyxl (optional), zxing-cpp (optional).

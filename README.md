@@ -86,17 +86,6 @@ Rows with problems (for example a missing Wi-Fi name) are skipped and listed so 
 ### Microsoft Store
 Search for **CK QR Code Generator** in the Microsoft Store.
 
-### MSIX from Releases
-1. Download `CKQRCodeGenerator_<version>_x64.msix` from the Releases page.
-2. Double-click it and choose **Install**.
-
-Test builds signed with a self-signed certificate need the certificate trusted first. Open PowerShell as Administrator and run:
-
-```powershell
-Import-Certificate -FilePath .\test_signing.cer -CertStoreLocation Cert:\LocalMachine\TrustedPeople
-Add-AppxPackage .\CKQRCodeGenerator_<version>_x64.msix
-```
-
 ### Run from source
 Requires Python 3.9+ (64-bit recommended). `openpyxl` (Excel batch files) and `zxing-cpp` (scan test) are optional: if they are missing, the app still runs and switches those two features off.
 
@@ -107,17 +96,16 @@ python qr_code_generator_qt.pyw
 
 On Windows you can also double-click `qr_code_generator_qt.bat`.
 
-## Build the MSIX yourself
+## Build the Store package yourself
 
-Needs 64-bit Python 3 and the Windows 10/11 SDK (`makeappx`, `signtool`). Keep `build.bat`, `qr_code_generator_qt.pyw` and `requirements.txt` together.
+Needs 64-bit Python 3 and the Windows 10/11 SDK (`makeappx`). Keep `build.bat`, `qr_code_generator_qt.pyw` and `requirements.txt` together.
 
 ```bat
-build.bat          :: test package, self-signed, installable on this PC
-build.bat store    :: unsigned package for Microsoft Store upload
+build.bat          :: builds the unsigned MSIX for Microsoft Store upload
 build.bat clean    :: delete the build and dist folders
 ```
 
-For the Store build, fill in `STORE_IDENTITY`, `STORE_PUBLISHER` and `STORE_PUBLISHER_DISPLAY` at the top of `build.bat` (from Partner Center, Product identity). To use your own app icon, put a PNG at `packaging\logo.png`.
+Before the first build, fill in `STORE_IDENTITY`, `STORE_PUBLISHER` and `STORE_PUBLISHER_DISPLAY` at the top of `build.bat` (from Partner Center, Product identity). The package is not signed because the Microsoft Store signs it for you, so it can only be installed through the Store. To use your own app icon, put a PNG at `packaging\logo.png`.
 
 ## Settings
 

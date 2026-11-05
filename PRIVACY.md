@@ -15,7 +15,7 @@ CK QR Code Generator works entirely on your computer. It does not connect to the
 
 **Clipboard.** If you use **Paste**, the app reads your clipboard once, at that moment. If you use **Copy image**, it places the finished QR code image on your clipboard. Nothing else is read or kept.
 
-**Settings.** The app saves a small settings file (`qr_generator_config.json`) on your computer with two things only: your theme (light or dark) and the file path of your default logo, if you set one. It contains no QR code content. In the Microsoft Store version it lives in `%APPDATA%\CK QR Code Generator`; when run from source it sits next to the script. Deleting the file resets these settings.
+**Settings.** The app saves a small settings file (`qr_generator_config.json`) on your computer with two things only: your theme (light or dark) and the file path of your default logo, if you set one. It contains no QR code content. It lives in the app's settings folder on your computer, and uninstalling the app removes it.
 
 ## What the app does not do
 

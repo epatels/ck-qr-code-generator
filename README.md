@@ -64,6 +64,12 @@ Rows with problems (for example a missing Wi-Fi name) are skipped and listed so 
 - **Default logo**: save one logo and load it in a click
 - **Dark and light themes**, remembered between sessions
 
+## Feedback and support
+
+- **Share feedback, report a problem or suggest a feature:** use the [feedback page](https://OWNER.github.io/REPO/) or [open an issue](https://github.com/OWNER/REPO/issues/new/choose) and pick a form.
+- **Questions and ideas:** [Discussions](https://github.com/OWNER/REPO/discussions).
+- Please don't post Wi-Fi passwords, UPI IDs or personal phone numbers. Made-up sample values are fine.
+
 ## Keyboard shortcuts
 
 | Shortcut | Action |

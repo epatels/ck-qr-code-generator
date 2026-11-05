@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CK QR Code Generator: Feedback</title>
+<meta name="description" content="Share feedback, report a problem or suggest a feature for CK QR Code Generator.">
+<style>
+  :root {
+    --bg:#FAF9F5; --surface:#FFFFFF; --border:#E8E6DC; --text:#141413; --muted:#6F6D66;
+    --accent:#C6613F; --accent-hover:#B35232;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1F1E1D; --surface:#292826; --border:#44413C; --text:#FAF9F5; --muted:#B0AEA5;
+            --accent:#D97757; --accent-hover:#E58A6C; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font:16px/1.55 "Segoe UI", Inter, system-ui, -apple-system, sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:48px 16px 64px; }
+  h1 { font-size:2rem; line-height:1.2; margin:0 0 8px; }
+  .lede { color:var(--muted); margin:0 0 32px; font-size:1.05rem; }
+  .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:14px;
+          padding:20px; display:flex; flex-direction:column; gap:8px; }
+  .card h2 { font-size:1.05rem; margin:0; }
+  .card p { margin:0; color:var(--muted); font-size:.95rem; flex:1; }
+  a.btn { display:inline-block; text-align:center; text-decoration:none; font-weight:600;
+          padding:10px 16px; border-radius:8px; margin-top:8px;
+          background:var(--accent); color:#fff; border:1px solid var(--accent); }
+  a.btn:hover { background:var(--accent-hover); border-color:var(--accent-hover); }
+  a.btn.alt { background:transparent; color:var(--text); border-color:var(--border); }
+  a.btn.alt:hover { border-color:var(--accent); }
+  a:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+  .note { margin-top:32px; padding:16px 20px; border-left:4px solid var(--accent);
+          background:var(--surface); border-radius:0 10px 10px 0; font-size:.95rem; }
+  .note strong { display:block; margin-bottom:4px; }
+  footer { margin-top:40px; color:var(--muted); font-size:.9rem; }
+  footer a { color:inherit; }
+  @media (max-width:480px) { h1 { font-size:1.6rem; } main { padding-top:32px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>CK QR Code Generator</h1>
+  <p class="lede">Your feedback shapes what we build next. Pick the option that fits. It takes about a minute, and you'll need a free GitHub account.</p>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Share feedback</h2>
+      <p>Tell us what you like and what could be better.</p>
+      <a class="btn" data-path="issues/new?template=feedback.yml" href="#">Give feedback</a>
+    </section>
+    <section class="card">
+      <h2>Report a problem</h2>
+      <p>Something broken, or a code that won't scan.</p>
+      <a class="btn" data-path="issues/new?template=bug_report.yml" href="#">Report a problem</a>
+    </section>
+    <section class="card">
+      <h2>Suggest a feature</h2>
+      <p>A new QR type, style or option you'd like.</p>
+      <a class="btn" data-path="issues/new?template=feature_request.yml" href="#">Suggest an idea</a>
+    </section>
+  </div>
+
+  <div class="grid" style="margin-top:16px">
+    <section class="card">
+      <h2>Questions and ideas</h2>
+      <p>Chat with other users and ask how to do something.</p>
+      <a class="btn alt" data-path="discussions" href="#">Open discussions</a>
+    </section>
+    <section class="card">
+      <h2>See what others said</h2>
+      <p>Browse existing feedback and problems before you add yours.</p>
+      <a class="btn alt" data-path="issues" href="#">Browse all issues</a>
+    </section>
+  </div>
+
+  <div class="note">
+    <strong>Please keep private details out</strong>
+    Feedback here is public. Don't post Wi-Fi passwords, UPI IDs, phone numbers or personal links. Made-up sample values are fine.
+  </div>
+
+  <footer>
+    <a data-path="" href="#">Back to the project on GitHub</a>
+  </footer>
+</main>
+
+<script>
+  // Works on GitHub Pages (owner.github.io/repo). When opened any other way,
+  // set REPO_URL below to your repository address.
+  var REPO_URL = "https://github.com/OWNER/REPO";
+  (function () {
+    var host = location.hostname, m = host.match(/^([^.]+)\.github\.io$/);
+    var repo = location.pathname.split("/").filter(Boolean)[0];
+    var base = (m && repo) ? "https://github.com/" + m[1] + "/" + repo : REPO_URL;
+    document.querySelectorAll("a[data-path]").forEach(function (a) {
+      a.href = base + (a.dataset.path ? "/" + a.dataset.path : "");
+    });
+  })();
+</script>
+</body>
+</html>

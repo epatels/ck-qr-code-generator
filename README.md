@@ -23,7 +23,7 @@ winget uninstall 9NPSR6HWP1FF
 
 Works on Windows 10 and Windows 11 (64-bit).
 
-**Links:** [Feedback page](https://OWNER.github.io/REPO/) · [Report a problem](https://github.com/OWNER/REPO/issues/new?template=bug_report.yml) · [Privacy policy](PRIVACY.md)
+**Links:** [Feedback page](https://epatels.github.io/ck-qr-code-generator/) · [Report a problem](https://github.com/epatels/ck-qr-code-generator/issues/new?template=bug_report.yml) · [Privacy policy](PRIVACY.md)
 
 ## Highlights
 
@@ -216,8 +216,8 @@ The **Reset** button clears everything back to the defaults. The **Light/Dark** 
 
 ## Feedback and support
 
-- **Share feedback, report a problem or suggest a feature:** use the [feedback page](https://OWNER.github.io/REPO/) or [open an issue](https://github.com/OWNER/REPO/issues/new/choose) and pick a form.
-- **Questions and ideas:** [Discussions](https://github.com/OWNER/REPO/discussions).
+- **Share feedback, report a problem or suggest a feature:** use the [feedback page](https://epatels.github.io/ck-qr-code-generator/) or [open an issue](https://github.com/epatels/ck-qr-code-generator/issues/new/choose) and pick a form.
+- **Questions and ideas:** [Discussions](https://github.com/epatels/ck-qr-code-generator/discussions).
 - Enjoying the app? A rating on the [Microsoft Store](https://apps.microsoft.com/detail/9NPSR6HWP1FF) helps others find it.
 - Please don't post Wi-Fi passwords, UPI IDs or personal phone numbers. Made-up sample values are fine.
 

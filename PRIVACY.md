@@ -47,4 +47,4 @@ If the app ever changes in a way that affects your privacy, this policy will be 
 
 ## Contact
 
-Questions about this policy: [open an issue](https://github.com/OWNER/REPO/issues/new/choose) on the project's GitHub page, or email **YOUR-EMAIL@example.com**.
+Questions about this policy: [open an issue](https://github.com/epatels/ck-qr-code-generator/issues/new/choose) on the project's GitHub page.

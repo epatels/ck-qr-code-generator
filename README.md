@@ -4,6 +4,8 @@ Branded, print-ready QR codes for links, text, Wi-Fi, contacts, email, phone, SM
 
 ![CK QR Code Generator](docs/screenshot.png)
 
+**Links:** [Feedback page](https://OWNER.github.io/REPO/) · [Report a problem](https://github.com/OWNER/REPO/issues/new?template=bug_report.yml) · [Privacy policy](PRIVACY.md) · [Microsoft Store listing text](STORE_LISTING.md) · [Releases](https://github.com/OWNER/REPO/releases)
+
 ## What's new in 3.1.0
 
 - **11 QR code types**, not just links (see below)
@@ -123,7 +125,7 @@ Your theme and default logo are saved in `qr_generator_config.json`. When run fr
 
 ## Privacy
 
-The app works entirely on your computer. It makes no network connections and collects, stores or sends no personal data. Wi-Fi passwords, contact details and payment details you type in are never saved to disk; only your theme and default logo path are.
+Read the full [privacy policy](PRIVACY.md). In short: the app works entirely on your computer. It makes no network connections and collects, stores or sends no personal data. Wi-Fi passwords, contact details and payment details you type in are never saved to disk; only your theme and default logo path are.
 
 ## Tips for scanning
 

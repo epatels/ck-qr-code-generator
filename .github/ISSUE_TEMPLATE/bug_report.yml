@@ -70,8 +70,7 @@ body:
       label: How did you install it?
       options:
         - Microsoft Store
-        - MSIX from GitHub Releases
-        - Run from source
+        - Winget
   - type: textarea
     id: extra
     attributes:
